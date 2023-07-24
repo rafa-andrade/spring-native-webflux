@@ -17,6 +17,7 @@ import java.util.NoSuchElementException;
 public class ProductService {
 
   private final ProductRepository productRepository;
+
   public Mono<Product> save(Product product) {
     return Mono.just(product)
         .doOnNext(p -> log.info("Saving product {}", p))
